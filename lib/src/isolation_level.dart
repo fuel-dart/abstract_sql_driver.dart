@@ -23,8 +23,11 @@ class TransactionIsolationLevel {
   const TransactionIsolationLevel(this.value, [String name]) : _name = name;
 
   @override
-  bool operator ==(dynamic other) =>
+  bool operator ==(Object other) =>
       other is TransactionIsolationLevel && value == other.value;
+
+  @override
+  int get hashCode => value;
 
   @override
   String toString() {
